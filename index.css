@@ -1,0 +1,121 @@
+  :root {
+    --item-width: 200px;
+  }
+  body {
+    background-image: url("https://full-stack-course.s3.us-east-2.amazonaws.com/bin/outer-space.jpeg");
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .container {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-areas: "filler title" 
+                         "nav content"
+                         "bottom-filler footer";
+    grid-template-columns: 20% 80%;
+    row-gap: 20px;
+    background-color: hsla(0,0%,50%,0.8);
+  }
+  .title {
+    grid-area: title;
+    margin: auto;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: "Times New Roman";
+    text-shadow: 3px 3px 5px black;
+    background-image: linear-gradient(to bottom right, hsl(280,100%,50%),hsl(0,0%,10%));
+    filter: drop-shadow(-1px -1px 5px black);
+    color: #fff;
+    margin-top: 10px;
+    padding: 0px 10px;
+    border-radius: 5px;
+  }
+  .title div {
+    font-size: 1rem;
+    padding: 5px;
+  }
+  .searcher {
+  }
+  .navbar {
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0px;
+    margin: 0 auto;
+  }
+  .navbar a { 
+    display: block;
+    position: relative;
+    color: #fff;
+    background-color: purple;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    transition: color 500ms ease 0ms, background-color 500ms ease 0ms, bottom 500ms ease 0ms, left 500ms linear 0ms;
+  }
+  .navbar a:hover {
+    bottom: 5px;
+    left: 2px;
+    color: #fff;
+    background-color: violet;
+  }
+  .content {
+    grid-area: content;
+    font-family: Garamond, "Courier New";
+    width: 50%;
+    margin: auto;
+  }
+  .content ul.list-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+  }
+  .content li.list-group-item {
+    list-style-type: none;
+  }
+  .content div {
+    width: var(--item-width);
+  }
+  .elevator-text-content dl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .elevator-text-content dd {
+    margin: 0;
+    padding: 0;
+  }
+  center {
+    width: var(--item-width);
+    font-weight: 700;
+    font-family: Arial;
+    font-size: 20px;
+  }
+  .footer {
+    color: #ccc;
+    text-align: center;
+  }
+  @media only screen and (max-width: 800px){
+    .container {
+      grid-template-areas:"title title" 
+                          "nav nav" 
+                          "filler content"
+                          "bottom-filler footer";
+      grid-template-columns: 0% 100%;
+    }
+    .navbar {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .navbar a {
+      display: inline-block;
+      margin: auto;
+    }
+  }
