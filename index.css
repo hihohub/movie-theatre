@@ -66,8 +66,6 @@
   .content {
     grid-area: content;
     font-family: Garamond, "Courier New";
-    width: 100%;
-    margin: auto;
   }
   .content ul.list-group {
     display: flex;
@@ -117,5 +115,26 @@
     .navbar a {
       display: inline-block;
       margin: auto;
+    }
+  }
+  @media only screen and (max-width: 540px){
+    .container {
+      grid-template-areas:"title title" 
+                          "nav nav" 
+                          "filler content"
+                          "bottom-filler footer";
+      grid-template-columns: 0% 100%;
+    }
+    .navbar {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .navbar a {
+      display: inline-block;
+      margin: auto;
+    }
+    .content ul.list-group {
+      flex-direction: column;
+      align-items: center;
     }
   }
